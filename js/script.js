@@ -20,11 +20,20 @@ const showMsg = () => {
 		pass.value.match(numbers)
 		
 	){
-		p.textContent = 'Masz bardzo dobre!😄'
+		p.textContent = 'Masz dobre!😄'
 		p.style.color = 'Orange'
 	} else {
         p.textContent = 'Masz słabe hasło!😄'
-		p.style.color = 'Red'
+		p.style.color = 'Tomato'
     }
 }
-pass.addEventListener('keyup', showMsg)
+const checkPassword = () => {
+    if(pass.value !== '') {
+        showMsg()
+    }   else {
+          p.textContent = 'Nie podałeś hasła...'
+		p.style.color = ''
+    }
+}
+
+pass.addEventListener('keyup', checkPassword)
