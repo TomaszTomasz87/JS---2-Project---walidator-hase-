@@ -13,7 +13,18 @@ const showMsg = () => {
 		pass.value.match(special)
 	) {
 		p.textContent = 'Masz bardzo dobre hasło!🥸'
-		p.computedStyleMap.color = 'Lime'
-	}
+		p.style.color = 'Lime'
+	} else if (
+		pass.value.length > minValue &&
+		pass.value.match(letters) &&
+		pass.value.match(numbers)
+		
+	){
+		p.textContent = 'Masz bardzo dobre!😄'
+		p.style.color = 'Orange'
+	} else {
+        p.textContent = 'Masz słabe hasło!😄'
+		p.style.color = 'Red'
+    }
 }
 pass.addEventListener('keyup', showMsg)
